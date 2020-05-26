@@ -15,7 +15,6 @@
 from concurrent import futures
 import grpc
 import os
-import time
 
 from ..engine import hyperparameters as hp_module
 from ..engine import trial as trial_module
@@ -75,3 +74,4 @@ def start_server(oracle):
         OracleServicer(oracle), server)
     server.add_insecure_port('{}:{}'.format(ip_addr, port))
     server.start()
+    return server
