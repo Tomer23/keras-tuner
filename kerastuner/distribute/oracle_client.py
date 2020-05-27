@@ -53,7 +53,7 @@ class OracleClient(object):
 
     def get_space(self):
         response = self.stub.GetSpace(
-            service_pb2.GetSpaceRequest(), wait_for_ready=True)
+            service_pb2.GetSpaceRequest(), wait_for_ready=False)
         return hp_module.HyperParameters.from_proto(response.hyperparameters)
 
     def update_space(self, hyperparameters):
